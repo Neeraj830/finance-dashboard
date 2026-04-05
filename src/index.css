@@ -1,13 +1,30 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer base {
+  :root {
+    --surface: 255 255 255;
+    --surface-muted: 248 250 252;
+    --accent: 15 118 110;
+    --accent-muted: 45 212 191;
+    --border: 226 232 240;
+    --text: 15 23 42;
+    --text-muted: 100 116 139;
+  }
+
+  .dark {
+    --surface: 15 23 42;
+    --surface-muted: 30 41 59;
+    --accent: 45 212 191;
+    --accent-muted: 20 184 166;
+    --border: 51 65 85;
+    --text: 241 245 249;
+    --text-muted: 148 163 184;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased transition-colors duration-200;
+    @apply dark:bg-slate-900 dark:text-slate-100;
+  }
 }
